@@ -33,7 +33,7 @@ public class SkillController {
     @Autowired
     private ModelMapper mapper;
 
-    @Operation(summary="Update Skill", description="Create Skill", tags={"skills"})
+    @Operation(summary="Update Skill", description="Create a new skill", tags={"skills"})
     @PutMapping("/skills/{skillId}")
     public SkillResource updateSector(@PathVariable Long skillId, @Valid @RequestBody SaveSkillResource resource){
         Skill skill = convertToEntity(resource);
