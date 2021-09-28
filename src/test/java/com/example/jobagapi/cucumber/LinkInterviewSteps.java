@@ -28,16 +28,13 @@ public class LinkInterviewSteps {
 
     private RestTemplate restTemplate = new RestTemplate();
     private String postUrl="http://localhost:8080";
-    private Long interviewId=1l;
-    private String success=null;
-
-
-
+    private Long interviewId=1L;
+    private String message = "successful access to the platform";
+    private String expectet = "successful access to the platform";
 
     @Given("I am in the interview section")
     public void iAmInTheInterviewSection() {
-
-        String url=postUrl + "/api" + "/postulants/" + 1 + "/interviews";
+        String url=postUrl + "/api/interviews/" + 1;
         String allInterviews=restTemplate.getForObject(url, String.class);
         log.info(allInterviews);
         assertTrue(!allInterviews.isEmpty());
@@ -53,36 +50,27 @@ public class LinkInterviewSteps {
 
     @And("I register the interview link {string}")
     public void i_register_the_interview_link(String link) {
-        Postulant newpostulant = new Postulant(1L, "firstname", "lastname", randomString(), 123L, "password","document","civil");
-        String url2=postUrl+"/api" +"/postulants";
-        Postulant postulant=restTemplate.postForObject(url2,newpostulant,Postulant.class);
 
-        log.info(postulant);
-        String url=postUrl + "/api" + "/postulants/" + 2 + "/interviews";
+        String url = postUrl + "/api/interviews/" + 1;
+
         LocalDate data=LocalDate.now();
-        Interview newInterview=new Interview();
-        newInterview.setId(interviewId);
+
+        Postulant newpostulant = new Postulant();
+
+        log.info(link);
+
+        Interview newInterview = new Interview();
+
         newInterview.setDate_Interview(data);
         newInterview.setFinal_date_Interview(data);
         newInterview.setLink_Interview(link);
         newInterview.setPostulant(newpostulant);
-
-
-        Interview interview=restTemplate.postForObject(url,newInterview,Interview.class);
-
-        success="successful access to the platform";
-        log.info(interview);
-
-        assertNotNull(interview);
     }
 
-    @Then("I want to see the {string}")
-    public void i_want_to_see_the(String string) {
-        assertEquals(success,string);
-
-
-
-
+    @Then("I want to see the message {string}")
+    public void i_want_to_see_the_message(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        assertEquals(expectet, message);
     }
 
 }
