@@ -5,5 +5,5 @@ Feature: ProfessionalProfile functionality
     Given the postulant is the seccion professionalprofile
 
     Examples:
-      |  skill1|skill2|
+      |skill1|skill2|
       |"Proactivo | "Responsable"|

@@ -4,7 +4,7 @@ Feature: Validate Link Interview
     And I register the interview link <link>
     Then I want to see the <message>
     Examples:
-      | link                                                                         | message                             |
+      | link| message|
       | "https://us04web.zoom.us/j" | "successful access to the platform" |
 
 

@@ -18,7 +18,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@CrossOrigin
 @RequestMapping("/api")
 public class SectorController {
     @Autowired

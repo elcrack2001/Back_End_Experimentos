@@ -29,7 +29,6 @@ public class UserDetailsServiceImpl implements DefaultUserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // TODO: Implement Repository-based User Store
         users = userRepository.findAll();
 
 

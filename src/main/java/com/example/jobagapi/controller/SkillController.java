@@ -1,9 +1,6 @@
 package com.example.jobagapi.controller;
 
-import com.example.jobagapi.domain.model.Sector;
 import com.example.jobagapi.domain.model.Skill;
-import com.example.jobagapi.resource.SaveSectorResource;
-import com.example.jobagapi.resource.SectorResource;
 import com.example.jobagapi.resource.SkillResource;
 import com.example.jobagapi.resource.SaveSkillResource;
 import com.example.jobagapi.domain.service.SkillService;
@@ -24,7 +21,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
 @RequestMapping("/api")
 public class SkillController {
     @Autowired
