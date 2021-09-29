@@ -17,6 +17,21 @@ public class JobOffer extends AuditModel {
     @Column(name = "id")
     private Long id;
 
+    public JobOffer() {
+    }
+
+    public JobOffer(Long id, Employeer employeer, String description, LocalDate begin_date_offer, LocalDate final_date_offer, Long salary, String type, String title, String direction) {
+        this.id = id;
+        this.employeer = employeer;
+        this.description = description;
+        this.begin_date_offer = begin_date_offer;
+        this.final_date_offer = final_date_offer;
+        this.salary = salary;
+        this.type = type;
+        this.title = title;
+        this.direction = direction;
+    }
+
     public Employeer getEmployeer() {
         return employeer;
     }
