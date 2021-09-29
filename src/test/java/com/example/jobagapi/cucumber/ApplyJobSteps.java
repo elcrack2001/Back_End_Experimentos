@@ -24,13 +24,9 @@ public class ApplyJobSteps {
 
     private RestTemplate restTemplate = new RestTemplate();
     private String postUrl="http://localhost:8080";
-    LocalDate data=LocalDate.now();
     private Long jobOfferId=1L;
 
     Employeer employeer = new Employeer(105L, "raul", "gonzales", "gonzales@gmail.com", 949033224L, "raul", "DNI", "CEO");
-    JobOffer jobOffer = new JobOffer(111L, employeer, "Desarrolador Front-End", data, data, 2500L, "Desarrollador", "Desarrolador Front-End", "Av. Aviacion 2555" );
-
-    Long employerId= 1L;
     private String error="El salario debe ser mayor o igual a 930";
 
     @Given("I want a new job")
