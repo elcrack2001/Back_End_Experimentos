@@ -21,12 +21,9 @@ import static org.junit.Assert.assertEquals;
 
 
 @Log4j2
-@RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class ApplyJobSteps {
 
-    @LocalServerPort
-    private int port;
     private RestTemplate restTemplate = new RestTemplate();
     private String postUrl="http://localhost:8080";
 

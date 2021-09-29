@@ -21,7 +21,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Log4j2
-@RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class ProfessionalProfileAddinSkillsSteps{
 
@@ -56,7 +55,6 @@ public class ProfessionalProfileAddinSkillsSteps{
         log.info(string);
 
         Postulant postulant = new Postulant();
-
 
         postulant.setId(postulantId.getId());
         postulant.setFirstname(postulantId.getFirstname());

@@ -20,7 +20,6 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Log4j2
-@RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class LinkInterviewSteps {
 
