@@ -23,7 +23,7 @@ import static org.junit.Assert.assertEquals;
 public class ApplyJobSteps {
 
     private RestTemplate restTemplate = new RestTemplate();
-    private String postUrl="http://localhost:8080";
+    private String postUrl="https://jobagapi.herokuapp.com";
     private Long jobOfferId=1L;
 
     Employeer employeer = new Employeer(105L, "raul", "gonzales", "gonzales@gmail.com", 949033224L, "raul", "DNI", "CEO");

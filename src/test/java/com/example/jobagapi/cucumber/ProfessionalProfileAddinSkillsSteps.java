@@ -1,23 +1,16 @@
 package com.example.jobagapi.cucumber;
 
-import com.example.jobagapi.domain.model.Employeer;
-import com.example.jobagapi.domain.model.JobOffer;
 import com.example.jobagapi.domain.model.Postulant;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import lombok.extern.log4j.Log4j2;
-import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
 import java.nio.charset.Charset;
 import java.time.LocalDate;
 import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Log4j2
@@ -26,7 +19,7 @@ public class ProfessionalProfileAddinSkillsSteps{
 
     @LocalServerPort
     private RestTemplate restTemplate = new RestTemplate();
-    private String postUrl="http://localhost:8080";
+    private String postUrl="https://jobagapi.herokuapp.com";
 
     Postulant postulantId = new Postulant(100L, "mark", "schmidt", "prieto@gmail.com", 909090334L, "troya", "DNI", "Casado");
 

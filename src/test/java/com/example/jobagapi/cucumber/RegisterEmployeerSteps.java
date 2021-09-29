@@ -21,7 +21,7 @@ public class RegisterEmployeerSteps {
 
     @LocalServerPort
     private RestTemplate restTemplate = new RestTemplate();
-    private String postUrl="http://localhost:8080";
+    private String postUrl="https://jobagapi.herokuapp.com";
     private String error=null;
     Long cont = 1L;
     Long employeerId = 1L + cont;
@@ -72,6 +72,8 @@ public class RegisterEmployeerSteps {
     public void registerARepeatedNumber() {
         String url=postUrl + "/api" + "/employeers/";
         Employeer newEmployeer = new Employeer(employeerId,"firstname","lastname",email,1L,"password","document","posicion");
+
+        log.info(newEmployeer);
 
         try
         {

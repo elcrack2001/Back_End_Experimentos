@@ -22,7 +22,7 @@ public class PostulantEmailSteps {
 
     @LocalServerPort
     private RestTemplate restTemplate = new RestTemplate();
-    private String postUrl="http://localhost:8080";
+    private String postUrl="https://jobagapi.herokuapp.com";
 
     private String error="El email ya esta en uso";
 

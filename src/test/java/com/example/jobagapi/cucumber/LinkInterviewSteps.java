@@ -26,7 +26,7 @@ public class LinkInterviewSteps {
     @LocalServerPort
 
     private RestTemplate restTemplate = new RestTemplate();
-    private String postUrl="http://localhost:8080";
+    private String postUrl="https://jobagapi.herokuapp.com";
     private Long interviewId=1L;
     private String message = "successful access to the platform";
     private String expectet = "successful access to the platform";
