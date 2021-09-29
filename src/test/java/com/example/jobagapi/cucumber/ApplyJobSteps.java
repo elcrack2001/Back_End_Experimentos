@@ -2,14 +2,12 @@ package com.example.jobagapi.cucumber;
 
 import com.example.jobagapi.domain.model.Employeer;
 import com.example.jobagapi.domain.model.JobOffer;
+import com.example.jobagapi.domain.model.Postulant;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 import lombok.extern.log4j.Log4j2;
-import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import java.nio.charset.Charset;
@@ -28,12 +26,15 @@ public class ApplyJobSteps {
     private String postUrl="http://localhost:8080";
 
     private Long jobOfferId=1L;
+
+    Employeer employeer = new Employeer(105L, "raul", "gonzales", "gonzales@gmail.com", 949033224L, "raul", "DNI", "CEO");
+
     Long employerId= 1L;
     private String error="El salario debe ser mayor o igual a 930";
 
     @Given("I want a new job")
     public void iWantANewJob() {
-        String url=postUrl + "/api/employeers/" + 1 + "/joboffers";
+        String url=postUrl + "/api/employeers/" + employeer.getId() + "/joboffers";
         String allJobs=restTemplate.getForObject(url, String.class);
         log.info(allJobs);
         assertTrue(!allJobs.isEmpty());
@@ -51,7 +52,7 @@ public class ApplyJobSteps {
     @Given("The job offer have a stable minimum {long}")
     public void the_job_offer_have_a_stable_minimum_and(Long salary) {
 
-        String url=postUrl + "/api/employeers/" + 1 + "/joboffers";
+        String url=postUrl + "/api/employeers/" + employeer.getId() + "/joboffers";
 
         LocalDate data=LocalDate.now();
 
@@ -90,7 +91,7 @@ public class ApplyJobSteps {
 
     @Given("The job offer have a low minimum {long}")
     public void the_job_offer_have_a_low_minimum(Long salary) {
-        String url=postUrl + "/api/employeers/" + 2 + "/joboffers";
+        String url=postUrl + "/api/employeers/" + employeer.getId() + "/joboffers";
         LocalDate data=LocalDate.now();
         Employeer employeer=new Employeer();
         log.info(salary);
