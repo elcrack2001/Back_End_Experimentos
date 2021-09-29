@@ -22,10 +22,6 @@ public class User extends AuditModel{
     @NotNull
     private String lastname;
 
-
-
-
-
     @NotNull
     private String email;
     @NotNull

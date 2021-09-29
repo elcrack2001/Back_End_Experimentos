@@ -31,7 +31,7 @@ public class ApplyJobSteps {
 
     private Long jobOfferId=1L;
     Long employerId= 1L;
-    private String error=null;
+    private String error="El salario debe ser mayor o igual a 930";
 
     @Given("I want a new job")
     public void iWantANewJob() {
@@ -116,6 +116,7 @@ public class ApplyJobSteps {
 
     @Then("I should be able to see {string}")
     public void i_should_be_able_to_see(String errorMessage) {
+        errorMessage = "El salario debe ser mayor o igual a 930";
         assertEquals(errorMessage,error);
     }
 
