@@ -29,17 +29,18 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PlanPostulantSteps {
 
     @LocalServerPort
-
+    private int port;
     private RestTemplate restTemplate = new RestTemplate();
     private String getUrl="http://localhost:8080";
     private String error=null;
 
     Long postulantId = randomLong();
 
+    Postulant PostulantId = new Postulant(101L, "luisto", "comunica", "sanchez@gmail.com", 907012364L, "comunica", "password", "Casado");
 
     @Given("I am in the plan section")
     public void i_am_in_the_plan_section() {
-        String url=getUrl + "/api" + "/postulants/" + 1 + "/planpostulants";
+        String url = getUrl + "/api/postulants/" + PostulantId.getId() + "/planpostulants";
         String allPlans=restTemplate.getForObject(url, String.class);
         log.info(allPlans);
         assertTrue(!allPlans.isEmpty());
@@ -63,7 +64,7 @@ public class PlanPostulantSteps {
 
     @Given("I want to access to the plan with plan")
     public void i_want_to_access_to_the_plan_with_plan() {
-        String postulanturl=getUrl + "/api" + "/postulants/";
+        String postulanturl=getUrl + "/api/postulants/";
         Postulant newpostulant = new Postulant(postulantId, "firstname", "lastname", randomString(), 123L, "password","document","married");
         Postulant postulant=restTemplate.postForObject(postulanturl,newpostulant,Postulant.class);
 
@@ -77,6 +78,7 @@ public class PlanPostulantSteps {
         assertNotNull(postulant);
         assertNotNull(planPostulant);
     }
+
     @Then("I want to see the plan with plan description {string},posts {int}, video {int} and duration {int}")
     public void i_want_to_see_the_plan(String description, Integer postulations, Integer video_duration, Integer duration) {
         String url=getUrl + "/api" + "/postulants/" + postulantId + "/planpostulants";

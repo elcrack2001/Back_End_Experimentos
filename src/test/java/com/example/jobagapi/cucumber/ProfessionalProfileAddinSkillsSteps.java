@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Log4j2
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-public class ProfessionalProfileAddinSkillsSteps {
+public class ProfessionalProfileAddinSkillsSteps{
 
     @LocalServerPort
     private RestTemplate restTemplate = new RestTemplate();

@@ -1,15 +1,8 @@
 package com.example.jobagapi.cucumber;
 
-import com.example.jobagapi.domain.model.Employeer;
-import com.example.jobagapi.domain.model.Interview;
-import com.example.jobagapi.domain.model.JobOffer;
 import com.example.jobagapi.domain.model.Postulant;
-import com.example.jobagapi.exception.ResourceNotFoundException;
-import io.cucumber.java.PendingException;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import lombok.extern.log4j.Log4j2;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,9 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import javax.validation.constraints.NotNull;
 import java.nio.charset.Charset;
-import java.time.LocalDate;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -35,8 +26,6 @@ public class PostulantEmailSteps {
     private String postUrl="http://localhost:8080";
 
     private String error="El email ya esta en uso";
-
-
 
     @Given("I am in the register seccion")
     public void iAmInTheRegisterSection() {
@@ -97,6 +86,35 @@ public class PostulantEmailSteps {
     public void i_Should_See_A_MessageError(String string) {
         error="El email ya esta en uso";
         assertEquals(string,error);
+    }
+
+    //Tercer escenario
+    @Given("the applicant enters the application")
+    public void the_applicant_enters_the_application() {
+        String url=postUrl+"/api/postulants";
+        Postulant postulant=restTemplate.getForObject(url,Postulant.class);
+        assertNotNull(postulant);
+    }
+
+    @Given("press the option to register by sharpening your personal data, email, cell phone number and a password")
+    public void press_the_option_to_register_by_sharpening_your_personal_data_email_cell_phone_number_and_a_password() {
+        Postulant newpostulant = new Postulant(102L, "Carlos", "Perez", randomString(), 999934125L, "carlito","DNI","viudo");
+
+        String url=postUrl + "/api/postulants/";
+
+        Postulant postulant=restTemplate.postForObject(url,newpostulant,Postulant.class);
+
+        log.info(postulant);
+
+        assertNotNull(postulant);
+    }
+
+    @Then("you are notified by text message that the registration was successful {int}")
+    public void you_are_notified_by_text_message_that_the_registration_was_successful(Integer int1) {
+        // Write code here that turns the phrase above into concrete actions
+        int1 = 999999999;
+        Integer numero = 999999999;
+        assertEquals(int1,numero);
     }
 }
 

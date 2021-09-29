@@ -17,10 +17,11 @@ import java.time.LocalDate;
 import java.util.Random;
 import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
+
 
 @Log4j2
 @RunWith(SpringRunner.class)
-
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class ApplyJobSteps {
 
@@ -48,6 +49,7 @@ public class ApplyJobSteps {
 
         return generatedString;
     }
+
 
     @Given("The job offer have a stable minimum {long}")
     public void the_job_offer_have_a_stable_minimum_and(Long salary) {
