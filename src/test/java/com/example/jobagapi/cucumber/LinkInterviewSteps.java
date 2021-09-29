@@ -33,7 +33,7 @@ public class LinkInterviewSteps {
 
     @Given("I am in the interview section")
     public void iAmInTheInterviewSection() {
-        String url=postUrl + "/api/interviews/" + 1;
+        String url=postUrl + "/api/interviews/";
         String allInterviews=restTemplate.getForObject(url, String.class);
         log.info(allInterviews);
         assertTrue(!allInterviews.isEmpty());
@@ -50,7 +50,7 @@ public class LinkInterviewSteps {
     @And("I register the interview link {string}")
     public void i_register_the_interview_link(String link) {
 
-        String url = postUrl + "/api/interviews/" + 1;
+        String url = postUrl + "/api/interviews/";
 
         LocalDate data=LocalDate.now();
 
