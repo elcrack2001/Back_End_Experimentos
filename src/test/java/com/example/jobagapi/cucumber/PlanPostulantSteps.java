@@ -30,7 +30,7 @@ public class PlanPostulantSteps {
     @LocalServerPort
     private int port;
     private RestTemplate restTemplate = new RestTemplate();
-    private String getUrl="https://jobagapi.herokuapp.com";
+    private String getUrl="http://jobagbackend-env.eba-uqwxesqd.us-east-2.elasticbeanstalk.com";
     private String error=null;
 
     Long postulantId = randomLong();

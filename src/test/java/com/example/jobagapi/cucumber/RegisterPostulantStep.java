@@ -19,7 +19,7 @@ public class RegisterPostulantStep {
 
     @LocalServerPort
     private RestTemplate restTemplate = new RestTemplate();
-    private String postUrl="https://jobagapi.herokuapp.com";
+    private String postUrl="http://jobagbackend-env.eba-uqwxesqd.us-east-2.elasticbeanstalk.com";
     private Long phone = 0L;
     private String email = "mark@htomail.com";
     private String error = "el correo electronico ingresado no es valido, intente de nuevo";

@@ -22,7 +22,7 @@ public class PostulantEmailSteps {
 
     @LocalServerPort
     private RestTemplate restTemplate = new RestTemplate();
-    private String postUrl="https://jobagapi.herokuapp.com";
+    private String postUrl="http://jobagbackend-env.eba-uqwxesqd.us-east-2.elasticbeanstalk.com";
 
     private String error="El email ya esta en uso";
 
