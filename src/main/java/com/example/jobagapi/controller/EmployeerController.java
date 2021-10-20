@@ -34,7 +34,7 @@ public class EmployeerController {
 
 
 
-    @Operation(summary="Get Employeers", description="Get All Employeers", tags={"employeers"})
+    @Operation(summary="Get Employeers", description="Get all the employeeers registered in the database", tags={"employeers"})
     @GetMapping("/employeers")
     public Page<EmployeerResource> getAllEmployeers(Pageable pageable){
         Page<Employeer> employeerPage = employeerService.getAllEmployeers(pageable);
@@ -45,7 +45,7 @@ public class EmployeerController {
 
         return new PageImpl<>(resources, pageable, resources.size());
     }
-    @Operation(summary="Post Employeers", description="Create Employeers", tags={"employeers"})
+    @Operation(summary="Post Employeers", description="Create a new employeer", tags={"employeers"})
     @CrossOrigin(origins="http://localhost:4200")
     @PostMapping("/employeers")
     public EmployeerResource createEmployeer(@Valid @RequestBody SaveEmployeerResource resource) {
@@ -53,13 +53,13 @@ public class EmployeerController {
         return convertToResource(employeerService.createEmployeer(employeer));
     }
 
-    @Operation(summary="Get EmployeersById", description="Get EmployeersById", tags={"employeers"})
+    @Operation(summary="Get EmployeersById", description="Get an employeer given an specific Id", tags={"employeers"})
     @GetMapping("/employeers/{id}")
     public EmployeerResource getEmployeerById(@PathVariable(name = "id") Long employeerId) {
         return convertToResource(employeerService.getEmployeerById(employeerId));
     }
 
-    @Operation(summary="Delete Employeer By Id", description="DeleteEmployeerById", tags={"employeers"})
+    @Operation(summary="Delete Employeer By Id", description="Delete an already existing employeer", tags={"employeers"})
     @DeleteMapping("/employeers/{postId}")
 
     public ResponseEntity<?> deleteEmployeer(@PathVariable Long postId) {

@@ -26,7 +26,7 @@ public class PostulantJobController {
     private ModelMapper mapper;
 
 
-    @Operation(summary="Postulant Jobs", description="Create postulantjobs",  tags={"postulant_jobs"})
+    @Operation(summary="Postulant Jobs", description="Create a new postulant job related to an existing postulant and job offer given an postulant Id and job offer Id",  tags={"postulant_jobs"})
     @PostMapping("/postulants/{postulantId}/joboffers/{jobofferId}/postulantjobs")
     public PostulantJobResource createJobOffer(
             @PathVariable Long postulantId,
@@ -35,7 +35,7 @@ public class PostulantJobController {
         return convertToResource(postulantJobService.createPostulantJob(postulantId,jobofferId,convertToEntity(resource)));
     }
 
-    @Operation(summary="Put Postulant Jobs", description="Update postulantjobs",  tags={"postulant_jobs"})
+    @Operation(summary="Put Postulant Jobs", description="Update an already existing postulant job given an existing postulant Id and job offer Id",  tags={"postulant_jobs"})
     @PutMapping("/postulant/{postulantId}/joboffers/{jobofferId}/postulantjobs")
     public PostulantJobResource updatePostulantJob(
             @PathVariable Long postulantId,
@@ -44,7 +44,7 @@ public class PostulantJobController {
         return convertToResource(postulantJobService.updatePostulantJob(postulantId, jobofferId,convertToEntity(resource)));
     }
 
-    @Operation(summary="Delete postulant job by postulant ID and job offer ID", description="Delete postulant job by postulant ID and job offer ID",  tags={"postulant_jobs"})
+    @Operation(summary="Delete postulant job by postulant ID and job offer ID", description="Delete an already existing postulant job given an existing postulant Id and job offer Id",  tags={"postulant_jobs"})
     @DeleteMapping("/postulants/{postulantId}/joboffers/{jobofferId}/postulantjobs")
     public ResponseEntity<?> deletePostulantJob(
             @PathVariable Long postulantId,
@@ -52,7 +52,7 @@ public class PostulantJobController {
         return postulantJobService.deletePostulantJob(postulantId, jobofferId);
     }
 
-    @Operation(summary = "Get All Postulant Job", description = "Get All Postulant Job", tags = {"postulant_jobs"})
+    @Operation(summary = "Get All Postulant Job", description = "Get all the postulant job registered in the database", tags = {"postulant_jobs"})
     @GetMapping("/postulantjobs")
     public Page<PostulantJobResource> getAllPostulantJob(Pageable pageable){
         Page<PostulantJob> postulantJobPage = postulantJobService.getAllPostulantJob(pageable);
@@ -63,14 +63,14 @@ public class PostulantJobController {
         return new PageImpl<>(resources,pageable, resources.size());
     }
 
-    @Operation(summary="Get Postulant Job by Id", description="Get Postulant Job by Id", tags={"postulant_jobs"})
+    @Operation(summary="Get Postulant Job by Id", description="Get an specific postulant job given an Id", tags={"postulant_jobs"})
     @GetMapping("/postulantjobs/{postulantJobId}")
     public PostulantJobResource getPostulantJobById(
             @PathVariable Long postulantJobId) {
         return convertToResource(postulantJobService.getPostulantJobById(postulantJobId));
     }
 
-    @Operation(summary="Get Postulant Job", description="Get all Postulant Job by postulant Id", tags={"postulant_jobs"})
+    @Operation(summary="Get Postulant Job", description="Get all the postulant job related to an existing postulant Id", tags={"postulant_jobs"})
     @GetMapping("/postulants/{postulantId}/postulantjobs")
     public Page<PostulantJobResource> getAllPostulantJobByPostulantId(@PathVariable Long postulantId, Pageable pageable) {
         Page<PostulantJob> postulantJobPage = postulantJobService.getAllPostulantJobByPostulantId(postulantId, pageable);
@@ -81,7 +81,7 @@ public class PostulantJobController {
         return new PageImpl<>(resources, pageable, resources.size());
     }
 
-    @Operation(summary="Get Postulant Job", description="Get all Postulant Job by postulant Id", tags={"postulant_jobs"})
+    @Operation(summary="Get Postulant Job", description="Get all the postulant job related to an existing job offer Id", tags={"postulant_jobs"})
     @GetMapping("/joboffers/{jobofferId}/postulantjobs")
     public Page<PostulantJobResource> getAllPostulantJobByJobOfferId(
             @PathVariable Long jobofferId,

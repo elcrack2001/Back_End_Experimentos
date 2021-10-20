@@ -24,7 +24,7 @@ public class MailMessageController {
     @Autowired
     private ModelMapper mapper;
 
-    @Operation(summary="Create Mail Message", description="Create Mail Message", tags={"mail_messages"})
+    @Operation(summary="Create Mail Message", description="Create a new mail message related to an existing postulant and employeer given an postulant Id and employeer Id", tags={"mail_messages"})
     @PostMapping("/postulants/{postulantId}/employeers/{employeerId}/mailmessages")
     public MailMessageResource createMailMessage(
             @PathVariable Long postulantId,
@@ -33,7 +33,7 @@ public class MailMessageController {
         return convertToResource(mailmessageService.createMailMessage(postulantId,employeerId,convertToEntity(resource)));
     }
 
-    @Operation(summary="Get all mail message by postulant ID", description="Get all mail message by postulant ID", tags={"mail_messages"})
+    @Operation(summary="Get all mail message by postulant ID", description="Get all the mail message related to an existing postulant ID", tags={"mail_messages"})
     @GetMapping("/postulants/{postulantId}/mailmessages")
     public Page<MailMessageResource> getMaillMessageByPostulantId(
             @PathVariable Long postulantId,
@@ -46,7 +46,7 @@ public class MailMessageController {
         return new PageImpl<>(resources, pageable, resources.size());
     }
 
-    @Operation(summary="Get all mail message by employeer ID", description="Get all mail message by employeer ID", tags={"mail_messages"})
+    @Operation(summary="Get all mail message by employeer ID", description="Get all the mail message related to an existing employeeer Id", tags={"mail_messages"})
     @GetMapping("/employeers/{employeerId}/mailmessages")
     public Page<MailMessageResource> getMaillMessageByEmployeerId(
             @PathVariable Long employeerId,
@@ -59,7 +59,7 @@ public class MailMessageController {
         return new PageImpl<>(resources, pageable, resources.size());
     }
 
-    @Operation(summary="Get all mail message by postulant Id and employeer Id", description="Get all mail message by postulant Id and employeer Id", tags={"mail_messages"})
+    @Operation(summary="Get all mail message by postulant Id and employeer Id", description="Get an already existing mail message given an existing postulant Id and employeer Id", tags={"mail_messages"})
     @GetMapping("/postulants/{postulantId}/employeers/{employeerId}/mailmessages")
     public Page<MailMessageResource> getAllMailMessagesByPostulantIdAnEmployeerId(
             @PathVariable Long postulantId,
@@ -73,7 +73,7 @@ public class MailMessageController {
         return new PageImpl<>(resources,pageable, resources.size());
     }
 
-    @Operation(summary="Delete mail messages by postulant ID and employeer ID", description="Delete mail messages by postulant ID and employeer ID", tags={"mail_messages"})
+    @Operation(summary="Delete mail messages by postulant ID and employeer ID", description="Delete an already existing mail message given an existing postulant Id and employeer Id", tags={"mail_messages"})
     @DeleteMapping("/postulants/{postulantId}/employeers/{employeerId}/mailmessages/{mailMessageId}")
     public ResponseEntity<?> deleteMailMessage(
             @PathVariable Long postulantId,
@@ -82,7 +82,7 @@ public class MailMessageController {
         return mailmessageService.deleteMailMessage(postulantId, employeerId, mailMessageId);
     }
 
-    @Operation(summary="Put Mail Messages", description="Update Put Mail Messages by Postulant Id and Employeer Id", tags={"mail_messages"})
+    @Operation(summary="Put Mail Messages", description="Update an already existing mail message given an existing postulant Id and employeer Id", tags={"mail_messages"})
     @PutMapping("/postulants/{postulantId}/employeers/{employeerId}/mailmessages/{mailMessageId}")
     public MailMessageResource updateMailMessage(
             @PathVariable Long postulantId,

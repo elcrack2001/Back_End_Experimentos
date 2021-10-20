@@ -34,7 +34,7 @@ public class CompanyController {
     private ModelMapper mapper;
 
 
-    @Operation(summary = "Post companys", description = "Create companys by employeer Id", tags = {"companies"})
+    @Operation(summary = "Create companies by employeer Id", description = "Create a new company related to an existing employeer given an employeer Id", tags = {"companies"})
     @PostMapping("/employeers/{employeerId}/sector/{sectorId}/companys")
     public CompanyResource createCompany(
             @PathVariable Long employeerId,
@@ -43,7 +43,7 @@ public class CompanyController {
         return convertToResource(companyService.createCompany(employeerId, sectorId, convertToEntity(resource)));
     }
 
-    @Operation(summary="Update Company by Employeer Id and Sector Id", description="Update Company by Employeer Id and Sector Id", tags={"companies"})
+    @Operation(summary="Update Company by Employeer Id and Sector Id", description="Update an already existing company given an existing employeer Id and sector Id", tags={"companies"})
     @PutMapping("/employeers/{employeerId}/sector/{sectorId}/companys")
     public CompanyResource updateCompany(
             @PathVariable Long employeerId,
@@ -52,7 +52,7 @@ public class CompanyController {
         return convertToResource(companyService.updateCompany(employeerId, sectorId, convertToEntity(resource)));
     }
 
-    @Operation(summary="Delete Company by Employeer Id and Sector Id", description="Delete Company by Employeer Id and Sector Id", tags={"companies"})
+    @Operation(summary="Delete Company by Employeer Id and Sector Id", description="Delete an already existing company given an existing employeer Id and sector Id", tags={"companies"})
     @DeleteMapping("/employeers/{employeerId}/sector/{sectorId}/companys")
     public ResponseEntity<?> deleteCompany(
             @PathVariable Long employeerId,
@@ -60,7 +60,7 @@ public class CompanyController {
         return companyService.deleteCompany(employeerId, sectorId);
     }
 
-    @Operation(summary = "Get All Company", description = "Get All Company", tags = {"companies"})
+    @Operation(summary = "Get All Company", description = "Get all the companies registered in the database", tags = {"companies"})
     @GetMapping("/companys")
     public Page<CompanyResource> getAllCompany(Pageable pageable){
         Page<Company> companyPage = companyService.getAllCompany(pageable);
@@ -71,14 +71,14 @@ public class CompanyController {
         return new PageImpl<>(resources,pageable, resources.size());
     }
 
-    @Operation(summary="Get Company by Id", description="Get Company by Id", tags={"companies"})
+    @Operation(summary="Get Company by Id", description="Get an specific company given an Id", tags={"companies"})
     @GetMapping("/companys/{companyId}")
     public CompanyResource getInterviewById(
             @PathVariable Long companyId) {
         return convertToResource(companyService.getCompanyById(companyId));
     }
 
-    @Operation(summary="Get Company by Employeer Id And Sector Id", description="Get Company by Employeer Id And Sector Id", tags={"companies"})
+    @Operation(summary="Get Company by Employeer Id And Sector Id", description="Get an already existing company given an existing employeer Id and sector Id", tags={"companies"})
     @GetMapping("/employeers/{employeerId}/sector/{sectorId}/companys")
     public CompanyResource getCompanyByEmployeerIdAndSectorId(
             @PathVariable Long employeerId,
@@ -86,7 +86,7 @@ public class CompanyController {
         return convertToResource(companyService.getCompanyByEmployeerIdAndSectorId(employeerId, sectorId));
     }
     
-        @Operation(summary = "Get All Company By Employeer Id", description = "Get All Company By Employeer Id", tags = {"companies"})
+        @Operation(summary = "Get All Company By Employeer Id", description = "Get all the companies related to an existing employeeer Id", tags = {"companies"})
     @GetMapping("/employeers/{employeerId}/companys")
     public Page<CompanyResource> getAllCompanyByEmployeerId(
             @PathVariable Long employeerId,

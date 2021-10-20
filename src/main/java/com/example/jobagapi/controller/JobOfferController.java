@@ -27,7 +27,7 @@ public class JobOfferController {
     private ModelMapper mapper;
 
 
-    @Operation(summary="Get joboffers", description="Get all joboffers", tags={"job_offers"})
+    @Operation(summary="Get joboffers", description="Get all the joboffers registered in the database", tags={"job_offers"})
 
     @GetMapping("/employeers/{employeerId}/joboffers")
     public Page<JobOfferResource> getAllJobOffers(
@@ -42,7 +42,7 @@ public class JobOfferController {
     }
 
 
-    @Operation(summary="Get joboffers", description="Get joboffers by employeerId", tags={"job_offers"})
+    @Operation(summary="Get joboffers", description="Get all the job offers related to an existing employeeer Id", tags={"job_offers"})
     @GetMapping("/jobOffers/{jobOfferId}/employeers/{employeerId}")
     public JobOfferResource getJobOfferByIdAndEmployeerId(
             @PathVariable Long employeerId,
@@ -50,7 +50,7 @@ public class JobOfferController {
         return convertToResource(jobOfferService.getJobOfferByIdAndEmployeerId(jobOfferId, employeerId));
     }
 
-    @Operation(summary="Post joboffers", description="Create joboffers", tags={"job_offers"})
+    @Operation(summary="Post joboffers", description="Create a new job offer related to an existing employeer given an employeer Id", tags={"job_offers"})
     @PostMapping("/employeers/{employeerId}/joboffers")
     public JobOfferResource createJobOffer(
             @PathVariable Long employeerId,
@@ -59,7 +59,7 @@ public class JobOfferController {
     }
 
 
-    @Operation(summary="Put joboffers", description="Update joboffers", tags={"job_offers"})
+    @Operation(summary="Put joboffers", description="Update an already existing job offer given an existing employeer Id", tags={"job_offers"})
 
     @PutMapping("/employeers/{employeerId}/jobOffers/{jobOfferId}")
     public JobOfferResource updateFarmland(
@@ -70,7 +70,7 @@ public class JobOfferController {
     }
 
 
-    @Operation(summary="Delete joboffers", description="Delete joboffer by employeer Id", tags={"job_offers"})
+    @Operation(summary="Delete joboffers", description="Delete an already existing job offer given an existing employeer Id", tags={"job_offers"})
 
     @DeleteMapping("/employeers/{employeerId}/jobOffers/{jobOfferId}")
     public ResponseEntity<?> deleteJobOffer(
@@ -79,7 +79,7 @@ public class JobOfferController {
         return jobOfferService.deleteJobOffer(employeerId, jobOfferId);
     }
 
-    @Operation(summary = "Get All Job Offer", description = "Get All Job Offer", tags = {"job_offers"})
+    @Operation(summary = "Get All Job Offer", description = "Get all the job offers registered in the database", tags = {"job_offers"})
     @GetMapping("/jobOffers")
     public Page<JobOfferResource> getAllJobOffer(Pageable pageable){
         Page<JobOffer> jobOfferPage = jobOfferService.getAllJobOffer(pageable);
@@ -90,7 +90,7 @@ public class JobOfferController {
         return new PageImpl<>(resources,pageable, resources.size());
     }
 
-    @Operation(summary="Get Job Offer by Id", description="Get Job Offer by Id", tags={"job_offers"})
+    @Operation(summary="Get Job Offer by Id", description="Get an specific job offer given an Id", tags={"job_offers"})
     @GetMapping("/jobOffers/{jobOfferId}")
     public JobOfferResource getJobOfferById(
             @PathVariable Long jobOfferId) {

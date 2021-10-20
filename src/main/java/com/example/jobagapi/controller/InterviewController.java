@@ -26,7 +26,7 @@ public class InterviewController {
     @Autowired
     private ModelMapper mapper;
 
-    @Operation(summary="Create interviews", description="Create interviews", tags={"interviews"})
+    @Operation(summary="Create interviews", description="Create a new interview realted to an existing job offer and postulant given an job offer Id and postulant Id", tags={"interviews"})
     @PostMapping("/postulants/{postulantId}/joboffers/{jobofferId}/interviews")
     public InterviewResource createInterview(
             @PathVariable Long postulantId,
@@ -35,7 +35,7 @@ public class InterviewController {
         return convertToResource(interviewService.createInterview(postulantId,jobofferId,convertToEntity(resource)));
     }
 
-    @Operation(summary="Delete interviews by Postulant ID and Job Offer ID", description="Delete interviews by Postulant ID and Job Offer ID", tags={"interviews"})
+    @Operation(summary="Delete interviews by Postulant ID and Job Offer ID", description="Delete an existing interview given an existing postulant Id and job offer Id", tags={"interviews"})
     @DeleteMapping("/postulants/{postulantId}/joboffers/{jobofferId}/interviews")
     public ResponseEntity<?> deleteInterview(
             @PathVariable Long postulantId,
@@ -43,7 +43,7 @@ public class InterviewController {
         return interviewService.deleteInterview(postulantId, jobofferId);
     }
 
-    @Operation(summary="Update interviews by postulant Id and job offer Id", description="Update interviews by postulant Id and job offer Id", tags={"interviews"})
+    @Operation(summary="Update interviews by postulant Id and job offer Id", description="Update an existing interview given an existing postulant Id and job offer Id", tags={"interviews"})
     @PutMapping("/postulants/{postulantId}/joboffers/{jobofferId}/interviews")
     public InterviewResource updateInterview(
             @PathVariable Long postulantId,
@@ -53,7 +53,7 @@ public class InterviewController {
     }
 
 
-    @Operation(summary = "Get All Interview", description = "Get All Interview", tags = {"interviews"})
+    @Operation(summary = "Get All Interview", description = "Get all the interviews registered in the database", tags = {"interviews"})
     @GetMapping("/interviews")
     public Page<InterviewResource> getAllInterview(Pageable pageable){
         Page<Interview> interviewPage = interviewService.getAllInterview(pageable);
@@ -64,14 +64,14 @@ public class InterviewController {
         return new PageImpl<>(resources,pageable, resources.size());
     }
 
-    @Operation(summary="Get Interview by Id", description="Get Interview by Id", tags={"interviews"})
+    @Operation(summary="Get Interview by Id", description="Get an specific interview given an Id", tags={"interviews"})
     @GetMapping("/interviews/{interviewId}")
     public InterviewResource getInterviewById(
             @PathVariable Long interviewId) {
         return convertToResource(interviewService.getInterviewById(interviewId));
     }
 
-    @Operation(summary="Get interviews", description="Get all interviews by postulant Id", tags={"interviews"})
+    @Operation(summary="Get interviews by postulant Id", description="Get an already existing interview given an existing postulant Id", tags={"interviews"})
     @GetMapping("/postulants/{postulantId}/interviews")
     public Page<InterviewResource> getAllInterviewsByPostulantId(@PathVariable Long postulantId, Pageable pageable) {
         Page<Interview> interviewPage = interviewService.getAllInterviewsByPostulantId(postulantId, pageable);
@@ -82,7 +82,7 @@ public class InterviewController {
         return new PageImpl<>(resources, pageable, resources.size());
     }
 
-    @Operation(summary="Get interviews", description="Get all interviews by postulant Id", tags={"interviews"})
+    @Operation(summary="Get interviews by job offer Id", description="Get an already existing interview given an existing job offer Id", tags={"interviews"})
     @GetMapping("/joboffers/{jobofferId}/interviews")
     public Page<InterviewResource> getAllInterviewsByJobOfferId(
             @PathVariable Long jobofferId,
