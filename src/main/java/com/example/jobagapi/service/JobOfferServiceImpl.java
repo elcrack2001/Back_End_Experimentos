@@ -1,15 +1,20 @@
 package com.example.jobagapi.service;
 
+import com.example.jobagapi.domain.model.JobCategory;
 import com.example.jobagapi.domain.model.JobOffer;
 import com.example.jobagapi.domain.repository.EmployeerRepository;
+import com.example.jobagapi.domain.repository.JobCategoryRepository;
 import com.example.jobagapi.domain.repository.JobOfferRepository;
 import com.example.jobagapi.domain.service.JobOfferService;
 import com.example.jobagapi.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class JobOfferServiceImpl implements JobOfferService {
@@ -17,6 +22,8 @@ public class JobOfferServiceImpl implements JobOfferService {
     private JobOfferRepository jobOfferRepository;
     @Autowired
     private EmployeerRepository employeerRepository;
+    @Autowired
+    private JobCategoryRepository categoryRepository;
 
     @Override
     public Page<JobOffer> getAllJobOffersByEmployeerId(Long employeerId, Pageable pageable) {
@@ -77,5 +84,32 @@ public class JobOfferServiceImpl implements JobOfferService {
             jobOfferRepository.delete(jobOffer);
             return ResponseEntity.ok().build();
         }).orElseThrow(() -> new ResourceNotFoundException("Job Offer","Id",jobOfferId));
+    }
+
+    @Override
+    public JobOffer assignJobOfferCategory(Long jobOfferId, Long categoryId) {
+        JobCategory category = categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new ResourceNotFoundException("Categories","Id",categoryId));
+        return jobOfferRepository.findById(jobOfferId).map(
+                jobOffer -> jobOfferRepository.save(jobOffer.addCategories(category)))
+                .orElseThrow(() -> new ResourceNotFoundException("JobOffer", "Id", jobOfferId));
+    }
+
+    @Override
+    public JobOffer unassignJobOfferCategory(Long jobOfferId, Long categoryId) {
+        JobCategory category = categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new ResourceNotFoundException("Category", "Id", categoryId));
+        return jobOfferRepository.findById(jobOfferId).map(
+                jobOffer -> jobOfferRepository.save(jobOffer.removeCategories(category)))
+                .orElseThrow(() -> new ResourceNotFoundException("JobOffer", "Id", jobOfferId));
+    }
+
+    @Override
+    public Page<JobOffer> getAllJobOfferCategories(Long categoryId, Pageable pageable) {
+        return categoryRepository.findById(categoryId).map(jobCategory -> {
+            List<JobOffer> jobOffers = jobCategory.getJobOffers();
+            int jobOffersCount = jobOffers.size();
+            return new PageImpl<>(jobOffers, pageable, jobOffersCount); })
+                .orElseThrow(() -> new ResourceNotFoundException("Categories", "Id", categoryId));
     }
 }
