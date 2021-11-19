@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-11-17T18:17:02.334Z",
+        "start_timestamp": "2021-11-19T04:42:22.072Z",
         "line": 10,
         "name": "As a postulant i want to postulate a new job.",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 366262700,
+              "duration": 277551000,
               "status": "passed"
             },
             "line": 4,
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 183353800,
+              "duration": 225063000,
               "status": "passed"
             },
             "line": 5,
@@ -43,7 +43,7 @@
           },
           {
             "result": {
-              "duration": 116999900,
+              "duration": 118328300,
               "status": "passed"
             },
             "line": 6,
@@ -56,7 +56,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-11-17T18:17:03.051Z",
+        "start_timestamp": "2021-11-19T04:42:22.740Z",
         "line": 18,
         "name": "As a postulant i dont want postulate a jobs with low minimum salary",
         "description": "",
@@ -66,7 +66,7 @@
         "steps": [
           {
             "result": {
-              "duration": 117000500,
+              "duration": 116935600,
               "status": "passed"
             },
             "line": 13,
@@ -78,7 +78,7 @@
           },
           {
             "result": {
-              "duration": 117276800,
+              "duration": 114998500,
               "status": "passed"
             },
             "line": 14,
@@ -125,7 +125,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-11-17T18:17:03.301Z",
+        "start_timestamp": "2021-11-19T04:42:22.978Z",
         "line": 8,
         "name": "As a postulant i want to access a interview through the link",
         "description": "",
@@ -135,7 +135,7 @@
         "steps": [
           {
             "result": {
-              "duration": 117005400,
+              "duration": 110996800,
               "status": "passed"
             },
             "line": 3,
@@ -164,7 +164,7 @@
           },
           {
             "result": {
-              "duration": 1002500,
+              "duration": 1000600,
               "status": "passed"
             },
             "line": 5,
@@ -194,7 +194,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-11-17T18:17:03.426Z",
+        "start_timestamp": "2021-11-19T04:42:23.096Z",
         "line": 9,
         "name": "As a postulant i want to access to my active payment plans",
         "description": "",
@@ -204,7 +204,7 @@
         "steps": [
           {
             "result": {
-              "duration": 120106400,
+              "duration": 116999100,
               "status": "passed"
             },
             "line": 4,
@@ -216,7 +216,7 @@
           },
           {
             "result": {
-              "duration": 314105800,
+              "duration": 264612100,
               "status": "passed"
             },
             "line": 5,
@@ -228,7 +228,7 @@
           },
           {
             "result": {
-              "duration": 112184300,
+              "duration": 111313800,
               "status": "passed"
             },
             "line": 6,
@@ -259,7 +259,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-11-17T18:17:03.979Z",
+        "start_timestamp": "2021-11-19T04:42:23.595Z",
         "line": 17,
         "name": "As a postulant i want to have 2 active payment plans",
         "description": "",
@@ -269,7 +269,7 @@
         "steps": [
           {
             "result": {
-              "duration": 113110700,
+              "duration": 230262100,
               "status": "passed"
             },
             "line": 12,
@@ -281,7 +281,7 @@
           },
           {
             "result": {
-              "duration": 261179100,
+              "duration": 255234400,
               "status": "passed"
             },
             "line": 13,
@@ -322,7 +322,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-11-17T18:17:04.357Z",
+        "start_timestamp": "2021-11-19T04:42:24.085Z",
         "line": 9,
         "name": "As a Postulant i want to register with my email.",
         "description": "",
@@ -332,7 +332,7 @@
         "steps": [
           {
             "result": {
-              "duration": 145277500,
+              "duration": 120676900,
               "status": "passed"
             },
             "line": 4,
@@ -344,7 +344,7 @@
           },
           {
             "result": {
-              "duration": 133392600,
+              "duration": 134997900,
               "status": "passed"
             },
             "line": 5,
@@ -362,7 +362,7 @@
           },
           {
             "result": {
-              "duration": 138715200,
+              "duration": 116759200,
               "status": "passed"
             },
             "line": 6,
@@ -375,7 +375,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-11-17T18:17:04.780Z",
+        "start_timestamp": "2021-11-19T04:42:24.463Z",
         "line": 17,
         "name": "As a Postulant i want to see a error if the email is in use.",
         "description": "",
@@ -385,7 +385,7 @@
         "steps": [
           {
             "result": {
-              "duration": 143100900,
+              "duration": 247676300,
               "status": "passed"
             },
             "line": 12,
@@ -397,7 +397,7 @@
           },
           {
             "result": {
-              "duration": 117695900,
+              "duration": 114928000,
               "status": "passed"
             },
             "line": 13,
@@ -427,7 +427,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-11-17T18:17:05.045Z",
+        "start_timestamp": "2021-11-19T04:42:24.829Z",
         "line": 26,
         "name": "The applicant postulant to register successfully",
         "description": "",
@@ -437,7 +437,7 @@
         "steps": [
           {
             "result": {
-              "duration": 137999900,
+              "duration": 115837200,
               "status": "passed"
             },
             "line": 20,
@@ -449,7 +449,7 @@
           },
           {
             "result": {
-              "duration": 136380100,
+              "duration": 131970300,
               "status": "passed"
             },
             "line": 21,
@@ -490,7 +490,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-11-17T18:17:05.324Z",
+        "start_timestamp": "2021-11-19T04:42:25.080Z",
         "line": 10,
         "name": "As a Postulant i want to add to my professionalprofile my skills.",
         "description": "",
@@ -500,7 +500,7 @@
         "steps": [
           {
             "result": {
-              "duration": 115491100,
+              "duration": 114615700,
               "status": "passed"
             },
             "line": 4,
@@ -529,7 +529,7 @@
           },
           {
             "result": {
-              "duration": 1999800,
+              "duration": 2002500,
               "status": "passed"
             },
             "line": 6,
@@ -559,7 +559,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-11-17T18:17:05.448Z",
+        "start_timestamp": "2021-11-19T04:42:25.201Z",
         "line": 10,
         "name": "As a user i want to sign up as a employeer with a not used phone number.",
         "description": "",
@@ -569,7 +569,7 @@
         "steps": [
           {
             "result": {
-              "duration": 117996900,
+              "duration": 118402600,
               "status": "passed"
             },
             "line": 5,
@@ -581,7 +581,7 @@
           },
           {
             "result": {
-              "duration": 152922000,
+              "duration": 130622900,
               "status": "passed"
             },
             "line": 6,
@@ -599,7 +599,7 @@
           },
           {
             "result": {
-              "duration": 120145000,
+              "duration": 117567200,
               "status": "passed"
             },
             "line": 7,
@@ -612,7 +612,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-11-17T18:17:05.844Z",
+        "start_timestamp": "2021-11-19T04:42:25.573Z",
         "line": 19,
         "name": "As a Employeer i want to see a error if the number is in use.",
         "description": "",
@@ -622,7 +622,7 @@
         "steps": [
           {
             "result": {
-              "duration": 149207700,
+              "duration": 119999300,
               "status": "passed"
             },
             "line": 14,
@@ -634,7 +634,7 @@
           },
           {
             "result": {
-              "duration": 122834600,
+              "duration": 115003100,
               "status": "passed"
             },
             "line": 15,
@@ -675,7 +675,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-11-17T18:17:06.121Z",
+        "start_timestamp": "2021-11-19T04:42:25.813Z",
         "line": 10,
         "name": "Postulant is unable to register",
         "description": "",
@@ -685,7 +685,7 @@
         "steps": [
           {
             "result": {
-              "duration": 112735400,
+              "duration": 109085000,
               "status": "passed"
             },
             "line": 4,
@@ -714,7 +714,7 @@
           },
           {
             "result": {
-              "duration": 2044000,
+              "duration": 2000600,
               "status": "passed"
             },
             "line": 6,
@@ -733,7 +733,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-11-17T18:17:06.240Z",
+        "start_timestamp": "2021-11-19T04:42:25.928Z",
         "line": 18,
         "name": "The postulant enters a wrong or not allowed registration data",
         "description": "",
@@ -743,7 +743,7 @@
         "steps": [
           {
             "result": {
-              "duration": 107508400,
+              "duration": 111676000,
               "status": "passed"
             },
             "line": 13,
@@ -790,7 +790,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-11-17T18:17:06.350Z",
+        "start_timestamp": "2021-11-19T04:42:26.042Z",
         "line": 26,
         "name": "The psotulant did not accept the terms and conditions",
         "description": "",
@@ -800,7 +800,7 @@
         "steps": [
           {
             "result": {
-              "duration": 109999500,
+              "duration": 112727100,
               "status": "passed"
             },
             "line": 21,

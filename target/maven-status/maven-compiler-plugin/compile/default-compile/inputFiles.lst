@@ -3,6 +3,7 @@ C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\ex
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\service\DefaultUserDetailsService.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\resource\JobOfferResource.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\resource\PlanPostulantResource.java
+C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\model\JobCategory.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\model\PostulantJob.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\repository\SkillRepository.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\model\Planemployeer.java
@@ -16,6 +17,7 @@ C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\ex
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\model\Sector.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\model\JobOffer.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\repository\SectorRepository.java
+C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\configuration\CorsConfig.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\service\JobOfferServiceImpl.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\service\StudiesServiceImpl.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\repository\JobOfferRepository.java
@@ -30,9 +32,12 @@ C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\ex
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\controller\PostulantJobController.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\service\JobOfferService.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\service\LanguagesService.java
+C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\service\JobOfferCategoryServiceImpl.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\service\PostulantServiceImpl.java
+C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\controller\JobCategoryController.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\resource\SaveCompanyResource.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\resource\SaveSectorResource.java
+C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\controller\JobOfferCategoryController.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\repository\PlanPostulantRepository.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\repository\PostulantJobRepository.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\controller\LanguagesController.java
@@ -57,6 +62,7 @@ C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\ex
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\configuration\DefaultAuthenticationEntryPoint.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\service\CompanyServiceImpl.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\repository\PostulantRepository.java
+C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\service\JobCategoryService.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\model\AuditModel.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\resource\PostulantJobResource.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\resource\SavePostulantResource.java
@@ -68,6 +74,7 @@ C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\ex
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\controller\EmployeerController.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\controller\ProfessionalProfileLanguagesController.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\service\InterviewService.java
+C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\resource\SaveJobCategoryResource.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\resource\PlanemployeerResource.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\controller\MailMessageController.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\exception\ResourceIncorrectData.java
@@ -79,6 +86,7 @@ C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\ex
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\repository\LanguagesRepository.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\service\ProfessionalProfileService.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\service\PostulantService.java
+C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\resource\JobCategoryResource.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\resource\MailMessageResource.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\repository\CompanyRepository.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\service\communication\AuthenticationResponse.java
@@ -92,6 +100,7 @@ C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\ex
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\service\UserDetailsServiceImpl.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\configuration\OpenApiConfiguration.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\controller\ProfessionalProfileController.java
+C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\repository\JobCategoryRepository.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\domain\repository\MailMessageRepository.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\configuration\DefaultRequestFilter.java
 C:\Users\vefr6\Documents\Experimentos\Back_End_Experimentos\src\main\java\com\example\jobagapi\resource\SaveMailMessageResource.java

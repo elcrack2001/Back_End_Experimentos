@@ -17,6 +17,7 @@ com\example\jobagapi\domain\model\Employeer.class
 com\example\jobagapi\domain\repository\EmployeerRepository.class
 com\example\jobagapi\service\InterviewImpl.class
 com\example\jobagapi\domain\repository\SkillRepository.class
+com\example\jobagapi\domain\repository\JobCategoryRepository.class
 com\example\jobagapi\resource\SavePlanPostulantResource.class
 com\example\jobagapi\controller\CompanyController.class
 com\example\jobagapi\controller\LanguagesController.class
@@ -35,10 +36,13 @@ com\example\jobagapi\configuration\DefaultRequestFilter.class
 com\example\jobagapi\controller\PostulantJobController.class
 com\example\jobagapi\resource\PlanemployeerResource.class
 com\example\jobagapi\configuration\OpenApiConfiguration.class
+com\example\jobagapi\domain\model\JobCategory.class
 com\example\jobagapi\resource\SaveStudiesResource.class
 com\example\jobagapi\service\UserServiceImpl.class
 com\example\jobagapi\service\communication\AuthenticationRequest.class
+com\example\jobagapi\controller\JobOfferCategoryController.class
 com\example\jobagapi\domain\repository\PostulantRepository.class
+com\example\jobagapi\controller\JobCategoryController.class
 com\example\jobagapi\domain\repository\PostulantJobRepository.class
 com\example\jobagapi\controller\StudiesController.class
 com\example\jobagapi\resource\PostulantResource.class
@@ -49,6 +53,8 @@ com\example\jobagapi\resource\SaveEmployeerResource.class
 com\example\jobagapi\domain\repository\InterviewRepository.class
 com\example\jobagapi\resource\SaveJobOfferResource.class
 com\example\jobagapi\service\CompanyServiceImpl.class
+com\example\jobagapi\configuration\CorsConfig$1.class
+com\example\jobagapi\resource\SaveJobCategoryResource.class
 com\example\jobagapi\controller\PlanPostulantController.class
 com\example\jobagapi\resource\LanguagesResource.class
 com\example\jobagapi\resource\StudiesResource.class
@@ -81,9 +87,11 @@ com\example\jobagapi\service\JobOfferServiceImpl.class
 com\example\jobagapi\domain\model\Skill.class
 com\example\jobagapi\resource\SaveLanguaguesResource.class
 com\example\jobagapi\resource\SkillResource.class
+com\example\jobagapi\service\JobOfferCategoryServiceImpl.class
 com\example\jobagapi\domain\model\Postulant.class
 com\example\jobagapi\resource\SavePostulantResource.class
 com\example\jobagapi\util\JwtCenter.class
+com\example\jobagapi\configuration\CorsConfig.class
 com\example\jobagapi\resource\InterviewResource.class
 com\example\jobagapi\configuration\DefaultAuthenticationEntryPoint.class
 com\example\jobagapi\domain\model\User.class
@@ -92,6 +100,7 @@ com\example\jobagapi\domain\service\PostulantJobService.class
 com\example\jobagapi\service\SectorServiceImpl.class
 com\example\jobagapi\controller\SectorController.class
 com\example\jobagapi\exception\ResourceIncorrectData.class
+com\example\jobagapi\resource\JobCategoryResource.class
 com\example\jobagapi\service\MailMessageServiceImpl.class
 com\example\jobagapi\domain\repository\PlanPostulantRepository.class
 com\example\jobagapi\service\PostulantJobServiceImpl.class
@@ -114,6 +123,7 @@ com\example\jobagapi\domain\repository\JobOfferRepository.class
 com\example\jobagapi\resource\SaveCompanyResource.class
 com\example\jobagapi\JobagApiApplication.class
 com\example\jobagapi\resource\SavePlanemployeerResource.class
+com\example\jobagapi\domain\service\JobCategoryService.class
 com\example\jobagapi\controller\ProfessionalProfileLanguagesController.class
 com\example\jobagapi\service\EmployeerServiceImpl.class
 com\example\jobagapi\service\PlanPostulantServiceImpl.class
