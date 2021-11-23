@@ -23,7 +23,14 @@ pipeline {
                 }
             }
         }
-
+	
+	stage ('sonarQube code') {
+	    steps {
+		withSonarQubeEnv('sonarQube') {
+			bat 'mvn clean verify sonar:sonar'
+		}
+	    }
+	}
 
         stage ('package Stage') {
             steps {
